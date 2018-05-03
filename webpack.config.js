@@ -43,7 +43,11 @@ const config = {
                 NODE_ENV: isDev ? '"development"' : '"production"'
             }
         }),
-        new HTMLPlugin()
+        new HTMLPlugin({
+          title: 'Vue App',
+          filename: 'index.html',
+          template: 'src/layouts/index.html'
+        })
     ]
 };
 
