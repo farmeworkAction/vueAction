@@ -100,19 +100,19 @@ if (isDev) {
             ]
         })
     });
-    config.plugins.push(
-        new ExtractPlugin('styles.[contentHash:8].css'),
-
-        // // 将类库文件单独打包出来
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'vendor'
-        // })
-
-        // webpack相关的代码单独打包
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'runtime'
-        // })
-    );
+    // config.plugins.push(
+    //     new ExtractPlugin('styles.[contentHash:8].css'),
+    //
+    //     // // 将类库文件单独打包出来
+    //     // new webpack.optimize.CommonsChunkPlugin({
+    //     //     name: 'vendor'
+    //     // })
+    //
+    //     // webpack相关的代码单独打包
+    //     // new webpack.optimize.CommonsChunkPlugin({
+    //     //     name: 'runtime'
+    //     // })
+    // );
 
     config.optimization = {
         splitChunks: {
