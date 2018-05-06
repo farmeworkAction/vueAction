@@ -12,11 +12,27 @@ const config = {
         filename: 'build.[hash:8].js',  // 输出的文件名
         path: path.join(__dirname, 'dist')  // 输出路径
     },
+    resolve: {
+      // extensions: ['', '.js', '.vue'],
+      // fallback: [path.join(__dirname, '../node_modules')],
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js',
+        //'src': path.resolve(__dirname, '../src'),
+        // 'assets': path.resolve(__dirname, '../src/assets'),
+        // 'components': path.resolve(__dirname, '../src/components')
+      }
+    },
     module: {       // 配置加载资源
         rules: [    // 规则
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                      scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+                      sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+                    }
+                  }
             },
             // {
             //     test: /\.jsx$/,
@@ -55,7 +71,7 @@ const config = {
         new HTMLPlugin({
           title: 'Vue App',
           filename: 'index.html',
-          template: 'src/layouts/index.html'
+          template: 'index.html'
         }),
         new webpack.LoaderOptionsPlugin({ options: {} }),
     ]
@@ -63,19 +79,20 @@ const config = {
 
 if (isDev) {
     // 开发坏境的配置
-    config.module.rules.push({
-        test: /\.styl/,
-        use: [
-            'style-loader',
-            'css-loader',
-            {
-                loader: 'postcss-loader',
-                options: {
-                    sourceMap: true
-                }
-            },
-        ]
-    });
+    // config.module.rules.push({
+    //     test: /\.scss/,
+    //     use: [
+    //         'style-loader',
+    //         'css-loader',
+    //         // {
+    //         //     loader: 'postcss-loader',
+    //         //     options: {
+    //         //         sourceMap: true
+    //         //     }
+    //         // },
+    //         'sass-loader'
+    //     ]
+    // });
     config.devtool = '#cheap-module-eval-source-map';
     config.devServer = {
         port: '8888',
@@ -100,17 +117,18 @@ if (isDev) {
     };
     config.output.filename = '[name].[chunkhash:8].js';
     config.module.rules.push({
-        test: /\.styl/,
+        test: /\.scss/,
         use: ExtractPlugin.extract({
             fallback: 'style-loader',
             use: [
                 'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        sourceMap: true
-                    }
-                },
+                // {
+                //     loader: 'postcss-loader',
+                //     options: {
+                //         sourceMap: true
+                //     }
+                // },
+                'sass-loader'
             ]
         })
     });

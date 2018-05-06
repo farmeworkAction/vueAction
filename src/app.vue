@@ -1,29 +1,17 @@
 <template>
-    <section class="main">
-        <p>我来了{{name}}</p>
-        <button @click = "clkEvt">点击</button>
-    </section>
+  <div>
+  <transition>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+  </transition>
+  </div>
 </template>
 
 <script>
-export default {
-    data () {
-        const uname ='lee';
 
-        return {
-            name: `vue + webpack${uname}`
-        };
-    },
-    methods: {
-        clkEvt () {
-            // console.log(this.name);
-        }
-    }
-};
 </script>
 
-<style>
-.main>p{
-    color: #000;
-}
+<style lang="scss">
+
 </style>
