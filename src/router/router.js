@@ -17,6 +17,7 @@ export default [{
       path: '/home',
       component: home
     },
+    // test页面
     {
       path: '/test',
       component: test
