@@ -23,6 +23,15 @@ const config = {
             //     loader: 'babel-loader'
             // },
             {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: [path.resolve('src'), path.resolve('test')]
+                // options: {
+                //   formatter: require('eslint-friendly-formatter')
+                // }
+            },
+            {
                 test: /\.(gif|jpg|jpeg|png|svg)$/,
                 use: [
                     {
@@ -47,7 +56,8 @@ const config = {
           title: 'Vue App',
           filename: 'index.html',
           template: 'src/layouts/index.html'
-        })
+        }),
+        new webpack.LoaderOptionsPlugin({ options: {} }),
     ]
 };
 

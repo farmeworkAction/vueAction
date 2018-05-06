@@ -8,17 +8,18 @@
 <script>
 export default {
     data () {
-    	const uname ='lee';
+        const uname ='lee';
+
         return {
-            name:`vue + webpack${uname}`
-        }
+            name: `vue + webpack${uname}`
+        };
     },
     methods: {
-        clkEvt() {
-            console.log(this.name);
+        clkEvt () {
+            // console.log(this.name);
         }
     }
-}
+};
 </script>
 
 <style>
