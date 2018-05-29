@@ -65,7 +65,7 @@ export default {
 
         }
         .guess_city{
-            //@include fj;
+            @include fj;
             align-items: center;
             height: 1.8rem;
             padding: 0 0.45rem;
