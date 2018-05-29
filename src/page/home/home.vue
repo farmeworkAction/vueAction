@@ -1,8 +1,8 @@
 <template>
     <div>
-        <!-- <head-top signin-up='home'>
+        <head-top signin-up='home'>
             <span slot='logo' class="head_logo">ele.me</span>
-        </head-top> -->
+        </head-top>
         <nav class="city_nav">
             <div class="city_tip">
                 <span>当前定位城市：</span>
