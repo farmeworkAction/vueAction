@@ -17,7 +17,7 @@ export default [{
       path: '/home',
       component: home
     },
-    // 列表页面（zh）
+    // 列表页面（ZH）
     {
       path: '/list',
       component: list
