@@ -1,6 +1,7 @@
 import App from '../App.vue'
 
 const home = r => require.ensure([], () => r(require('../page/home/home.vue')), 'home')
+const list = r => require.ensure([], () => r(require('../page/list/list.vue')), 'list')
 const test = r => require.ensure([], () => r(require('../page/test/test.vue')), 'test')
 
 export default [{
