@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div id="wrap">
         <div class="fixd-top1">
@@ -567,3 +568,4 @@ section#elm-list{
     }
 }
 </style>
+/* eslint-enable */
