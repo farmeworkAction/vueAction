@@ -8,6 +8,9 @@
                 <span>当前定位城市：</span>
                 <span>定位不准时，请在城市列表中选择</span>
             </div>
+            <div class="guess_city">
+              <span>{{guessCity}}</span>
+            </div>
         </nav>
         <section id="hot_city_container">
             <h4 class="city_title">热门城市</h4>
@@ -29,10 +32,27 @@
 </template>
 
 <script>
+import axios from 'axios'
 import headTop from '../../components/header/head.vue'
+// import func from './vue-temp/vue-editor-bridge';
 export default {
+  data () {
+    return {
+      guessCity: '' // 当前城市
+    }
+  },
   components: {
     headTop
+  },
+  methods: {
+
+  },
+  mounted: function () {
+    // 获取当前城市
+    axios.get('https://elm.cangdu.org/v1/cities?type=guess').then((data) => {
+      console.log(this)
+      this.guessCity = data.data.name
+    })
   }
 }
 </script>
