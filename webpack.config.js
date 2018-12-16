@@ -13,8 +13,7 @@ const config = {
         path: path.join(__dirname, 'dist')  // 输出路径
     },
     resolve: {
-      // extensions: ['', '.js', '.vue'],
-      // fallback: [path.join(__dirname, '../node_modules')],
+      extensions: ['.js', '.vue'],
       alias: {
         'vue$': 'vue/dist/vue.esm.js',
         //'src': path.resolve(__dirname, '../src'),
@@ -35,18 +34,14 @@ const config = {
                   }
             },
             // {
-            //     test: /\.jsx$/,
-            //     loader: 'babel-loader'
+            //     test: /\.(js|vue)$/,
+            //     loader: 'eslint-loader',
+            //     enforce: 'pre',
+            //     include: [path.resolve('src')]
+            //     // options: {
+            //     //   formatter: require('eslint-friendly-formatter')
+            //     // }
             // },
-            {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                include: [path.resolve('src')]
-                // options: {
-                //   formatter: require('eslint-friendly-formatter')
-                // }
-            },
             {
                 test: /\.(gif|jpg|jpeg|png|svg)$/,
                 use: [

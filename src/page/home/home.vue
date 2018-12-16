@@ -32,9 +32,8 @@
 </template>
 
 <script>
-import axios from 'axios'
 import headTop from '../../components/header/head.vue'
-// import func from './vue-temp/vue-editor-bridge';
+import {cityGuess} from '../../service/getData'
 export default {
   data () {
     return {
@@ -49,9 +48,8 @@ export default {
   },
   mounted: function () {
     // 获取当前城市
-    axios.get('https://elm.cangdu.org/v1/cities?type=guess').then((data) => {
-      console.log(this)
-      this.guessCity = data.data.name
+    cityGuess().then(res => {
+      this.guessCity = res.data.name
     })
   }
 }
