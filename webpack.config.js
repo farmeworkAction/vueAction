@@ -2,13 +2,14 @@ const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
 const config = {
     target: 'web',
-    entry: path.join(__dirname, 'src/index.js'),   // 输入：项目主文件（入口文件）
-    output: {       // 输出
+    entry: path.join(__dirname, 'src/index.js'),
+    output: {
         filename: 'build.[hash:8].js',  // 输出的文件名
         path: path.join(__dirname, 'dist')  // 输出路径
     },
@@ -17,12 +18,12 @@ const config = {
       alias: {
         'vue$': 'vue/dist/vue.esm.js',
         //'src': path.resolve(__dirname, '../src'),
-        // 'assets': path.resolve(__dirname, '../src/assets'),
-        // 'components': path.resolve(__dirname, '../src/components')
+        //'assets': path.resolve(__dirname, '../src/assets'),
+        //'components': path.resolve(__dirname, '../src/components')
       }
     },
-    module: {       // 配置加载资源
-        rules: [    // 规则
+    module: {
+        rules: [
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -74,20 +75,20 @@ const config = {
 
 if (isDev) {
     // 开发坏境的配置
-    // config.module.rules.push({
-    //     test: /\.scss/,
-    //     use: [
-    //         'style-loader',
-    //         'css-loader',
-    //         // {
-    //         //     loader: 'postcss-loader',
-    //         //     options: {
-    //         //         sourceMap: true
-    //         //     }
-    //         // },
-    //         'sass-loader'
-    //     ]
-    // });
+    config.module.rules.push({
+        test: /\.scss/,
+        use: [
+            'style-loader',
+            'css-loader',
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            'sass-loader'
+        ]
+    });
     config.devtool = '#cheap-module-eval-source-map';
     config.devServer = {
         port: '8888',
@@ -117,29 +118,20 @@ if (isDev) {
             fallback: 'style-loader',
             use: [
                 'css-loader',
-                // {
-                //     loader: 'postcss-loader',
-                //     options: {
-                //         sourceMap: true
-                //     }
-                // },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                },
                 'sass-loader'
             ]
         })
     });
-    // config.plugins.push(
-    //     new ExtractPlugin('styles.[contentHash:8].css'),
-    //
-    //     // // 将类库文件单独打包出来
-    //     // new webpack.optimize.CommonsChunkPlugin({
-    //     //     name: 'vendor'
-    //     // })
-    //
-    //     // webpack相关的代码单独打包
-    //     // new webpack.optimize.CommonsChunkPlugin({
-    //     //     name: 'runtime'
-    //     // })
-    // );
+    config.plugins.push(
+        new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
+        new ExtractPlugin('styles.[hash:8].css'),
+    );
 
     config.optimization = {
         splitChunks: {

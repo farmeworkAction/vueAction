@@ -15,29 +15,35 @@
         <section id="hot_city_container">
             <h4 class="city_title">热门城市</h4>
             <ul class="citylistul clear">
+							<li v-for="item in hotCity" :key="item.id">
+								{{item.name}}
+							</li>
             </ul>
         </section>
         <section class="group_city_container">
-            <ul class="letter_classify">
-                <li>
-                    <h4 class="city_title">
-                        <span>（按字母排序）</span>
-                    </h4>
-                    <ul class="groupcity_name_container citylistul clear">
-                    </ul>
-                </li>
-            </ul>
+            <li v-for="(value, key, index) in sortGroup" :key="key"  class="letter_classify_li">
+								<h4 class="city_title">{{key}}
+										<span v-if="index == 0">（按字母排序）</span>
+								</h4>
+								<ul class="groupcity_name_container citylistul clear">
+										<li v-for="item in value" :key="item.id" class="ellipsis">
+											{{item.name}}
+										</li>
+								</ul>
+						</li>
         </section>
     </div>
 </template>
 
 <script>
 import headTop from '../../components/header/head.vue'
-import {cityGuess} from '../../service/getData'
+import { getCityGuess, getHotCity, getCityGroup } from '../../service/getData'
 export default {
   data () {
     return {
-      guessCity: '' // 当前城市
+			guessCity: '', // 当前城市
+			hotCity: [],
+			cityGroup: {},
     }
   },
   components: {
@@ -47,11 +53,34 @@ export default {
 
   },
   mounted: function () {
-    // 获取当前城市
-    cityGuess().then(res => {
+		
+		// 获取当前城市
+    getCityGuess().then(res => {
       this.guessCity = res.data.name
-    })
-  }
+		})
+
+    // 获取热门城市
+    getHotCity().then(res => {
+      this.hotCity = res.data
+		})
+		
+		
+		//获取所有城市
+		getCityGroup().then(res => {
+      this.cityGroup = res.data
+		})
+	},
+	computed:{
+		sortGroup() {
+			let sortobj = {};
+				for (let i = 65; i <= 90; i++) {
+						if (this.cityGroup[String.fromCharCode(i)]) {
+								sortobj[String.fromCharCode(i)] = this.cityGroup[String.fromCharCode(i)];
+						}
+				}
+				return sortobj
+		}
+	}
 }
 </script>
 
