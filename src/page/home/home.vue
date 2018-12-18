@@ -8,16 +8,21 @@
                 <span>当前定位城市：</span>
                 <span>定位不准时，请在城市列表中选择</span>
             </div>
-            <div class="guess_city">
+            <router-link :to="'/city/' + cityId" class="guess_city">
               <span>{{guessCity}}</span>
-            </div>
+							<svg class="arrow_right">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
+							</svg>
+            </router-link>
         </nav>
         <section id="hot_city_container">
             <h4 class="city_title">热门城市</h4>
             <ul class="citylistul clear">
-							<li v-for="item in hotCity" :key="item.id">
-								{{item.name}}
-							</li>
+								<li v-for="item in hotCity" :key="item.id">
+									<router-link :to="'/city/' + item.id">
+										{{item.name}}
+									</router-link>
+								</li>
             </ul>
         </section>
         <section class="group_city_container">
@@ -27,7 +32,9 @@
 								</h4>
 								<ul class="groupcity_name_container citylistul clear">
 										<li v-for="item in value" :key="item.id" class="ellipsis">
-											{{item.name}}
+											<router-link :to="'/city/' + item.id">
+												{{item.name}}
+											</router-link>
 										</li>
 								</ul>
 						</li>
@@ -42,6 +49,7 @@ export default {
   data () {
     return {
 			guessCity: '', // 当前城市
+			cityId:'',
 			hotCity: [],
 			cityGroup: {},
     }
@@ -56,7 +64,9 @@ export default {
 		
 		// 获取当前城市
     getCityGuess().then(res => {
-      this.guessCity = res.data.name
+			console.log(res.data)
+			this.guessCity = res.data.name
+			this.cityId = res.data.id
 		})
 
     // 获取热门城市

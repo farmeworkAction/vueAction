@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes,
-  // mode: routerMode,
+  mode: 'hash',
   strict: process.env.NODE_ENV !== 'production',
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {

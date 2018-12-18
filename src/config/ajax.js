@@ -4,7 +4,7 @@ import axios from './axios'
 /**
  * 
  * @param {*} url 
- * @param {*} data 当参数为多个时格式为{ params: { type: 'guess' } }
+ * @param {*} data 当参数为多个时格式为{ params: { type: 'guess' } } 单个参数
  * @param {*} error 
  */
 export function ajaxGet (url, data, error) {

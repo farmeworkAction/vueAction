@@ -21,7 +21,7 @@ export default [{
     },
     // 城市页面选择地址
     {
-      path: '/city',
+      path: '/city/:cityid',
       component: city
     },
     // 列表页面（ZH）

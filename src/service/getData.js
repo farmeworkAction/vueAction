@@ -12,3 +12,7 @@ export const getHotCity = () => ajaxGet(config.url + '/v1/cities?type=hot')
 // 获取首页所有城市
 
 export const getCityGroup = () => ajaxGet(config.url + '/v1/cities?type=group')
+
+// 获取当前城市
+
+export const getCurrentCity = () => ajaxGet(config.url + '/v1/cities/')

@@ -1,6 +1,6 @@
 <template>
     <div class="city_container">
-        <head-top>
+        <head-top head-title='cityname' go-back='true'>
             <router-link to="/home" slot="changecity" class="change_city">切换城市</router-link>
         </head-top>
         <form class="city_form" v-on:submit.prevent>
@@ -25,10 +25,23 @@
 
 <script>
 import headTop from '../../components/header/head.vue'
+import { getCurrentCity } from '../../service/getData'
 
 export default {
+    data(){
+        return {
+            cityid:'', // 当前城市id
+            cityname:'', // 当前城市名字
+        }
+    },
     components: {
         headTop
+    },
+    mounted(){
+        this.cityid = this.$route.params.cityid;
+        getCurrentCity({ params: { id: this.cityid } }).then((res) => {
+            console.log(res);
+        })
     }
 }
 </script>
