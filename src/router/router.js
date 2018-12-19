@@ -1,6 +1,7 @@
 import App from '../App.vue'
 
 const home = r => require.ensure([], () => r(require('../page/home/home.vue')), 'home')
+const index = r => require.ensure([], () => r(require('../page/index/index.vue')), 'index')
 const city = r => require.ensure([], () => r(require('../page/city/city.vue')), 'city')
 const list = r => require.ensure([], () => r(require('../page/list/list.vue')), 'list')
 const test = r => require.ensure([], () => r(require('../page/test/test.vue')), 'test')
@@ -23,6 +24,11 @@ export default [{
     {
       path: '/city/:cityid',
       component: city
+    },
+    // 首页页面（ZH）
+    {
+      path: '/index',
+      component: index
     },
     // 列表页面（ZH）
     {
