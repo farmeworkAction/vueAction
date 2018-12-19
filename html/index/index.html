@@ -3,37 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no"/>
-    <title>饿了么-列表页</title>
-    <script>
-        (function(){
-            var html = document.documentElement;
-            var hWidth = html.getBoundingClientRect().width;
-            html.style.fontSize = hWidth/15 + "px";
-        })()
-    </script>
-    <link rel="stylesheet" type="text/css" href="style/list.css"/>
+    <title>饿了么-首页</title>
+    <link rel="stylesheet" type="text/css" href="style/index.css"/>
+    <script type="text/javascript" src="js/rem.js"></script>
 </head>
 
 <body>
     <div id="wrap">
-        <div class="fixd-top1">
-            <header>
-                <div class="header-left"><a href="#" class="triangle-left"></a></div>
-                <h1>美食</h1>
-            </header>
-        </div>
-        <section id="elm-list">
-            <div class="fixd-top2">
-                <div class="nav">
-                    <a>美食<span class="triangle-down"></span></a>
-                    <a>排序<span class="triangle-down"></span></a>
-                    <a class="no-border">筛选<span class="triangle-down"></span></a>
-                </div>
+        <header>
+            <div class="header-search"><a href="#" class="ico-search"></a></div>
+            <h1>黄浦区上海人民广场</h1>
+            <div class="header-login"><a href="#">登陆</a> | <a href="#">注册</a></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>            
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>            
+                <li><a href="#">
+                    <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+                    <span>甜品饮品</span>     
+                </a></li>
+            </ul>
+            <div class="point">
+                <span class="hover"></span>
+                <span></span>
             </div>
+        </nav>       
+        <section id="elm-seller">
+            <div class="seller-title">
+                附近商家
+            </div>  
             <ul class="list">
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -48,14 +77,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                             
+                            </div>     
                         </div>
                         <div class="price">
                             <div>
@@ -69,7 +97,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -84,14 +112,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>           
                         </div>
                         <div class="price">
                             <div>
@@ -105,7 +132,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -120,14 +147,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>         
                         </div>
                         <div class="price">
                             <div>
@@ -141,7 +167,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -156,14 +182,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
                             </div>
-                             
                         </div>
                         <div class="price">
                             <div>
@@ -177,7 +202,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -192,14 +217,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>    
                         </div>
                         <div class="price">
                             <div>
@@ -213,7 +237,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -228,14 +252,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>              
                         </div>
                         <div class="price">
                             <div>
@@ -249,7 +272,7 @@
                 </a></li>                
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -264,14 +287,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>                         
                         </div>
                         <div class="price">
                             <div>
@@ -285,7 +307,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -300,14 +322,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                             
+                            </div>                            
                         </div>
                         <div class="price">
                             <div>
@@ -321,7 +342,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -336,14 +357,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>                                
                         </div>
                         <div class="price">
                             <div>
@@ -357,7 +377,7 @@
                 </a></li>
                 <li><a href="#">
                     <div class="img">
-                        <img src="images/listpic.png" />
+                        <img src="style/images/listpic.png" />
                     </div>
                     <div class="content">
                         <div class="title">
@@ -372,14 +392,13 @@
                         </div>
                         <div class="sales">
                             <div>
-                                <span class="sale-sorce"><img src="images/star.jpg"/> 4.6</span> 
+                                <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span> 
                                 <span>月售2003单</span>
                             </div>
                             <div>
                                 <span class="i-speed1">蜂鸟专送</span>
                                 <span class="i-speed2">准时达</span>
-                            </div>
-                                
+                            </div>                               
                         </div>
                         <div class="price">
                             <div>
@@ -390,13 +409,27 @@
                             </div>                            
                         </div>
                     </div>
-                </a></li>                  
-            </ul>
+                </a></li>
+            </ul>          
         </section>
+        <footer>    
+            <a>  
+                <img src="style/images/nav-footer.jpeg">
+                <span>外卖</span>
+            </a>
+            <a>  
+                    <img src="style/images/nav-footer.jpeg">
+                <span>搜索</span>
+            </a>
+            <a>  
+                    <img src="style/images/nav-footer.jpeg">
+                <span>订单</span>
+            </a>
+            <a>  
+                <img src="style/images/nav-footer.jpeg">
+                <span>我的</span>
+            </a>
+        </footer>
     </div>
 </body>
 </html>
-
-
-
-

@@ -16,120 +16,131 @@ html, body {
 
 .fixd-top2 {
   position: sticky;
-  top: 1.76rem;
+  top: 1.96rem;
   z-index: 100; }
 
 header {
-  height: 1.76rem;
-  line-height: 1.76rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 1.96rem;
+  line-height: 1.96rem;
   background: #2395ff;
   color: #fff;
   position: relative; }
   header .header-left {
-    margin-left: 0.4rem; }
+    margin-left: .43rem; }
     header .header-left .triangle-left {
       display: inline-block;
-      margin: 0.12rem;
-      border-left: 0.08rem solid;
-      border-bottom: 0.08rem solid;
-      width: 0.36rem;
-      height: 0.36rem;
+      margin: .11rem;
+      border-left: .09rem solid;
+      border-bottom: .09rem solid;
+      width: .39rem;
+      height: .39rem;
       transform: rotate(45deg);
       color: #fff; }
   header h1 {
-    font-size: 0.72rem;
+    font-size: .78rem;
     position: absolute;
     top: 0;
     left: 50%;
-    margin-left: -0.72rem; }
+    margin-left: -0.78rem; }
 
 section#elm-list {
-  margin-top: 1.76rem; }
+  margin-top: 1.96rem; }
   section#elm-list .nav {
-    height: 1.2rem;
-    line-height: 1.2rem;
-    padding: 0.2rem 0;
-    font-size: 0.64rem;
-    border-bottom: 0.02rem solid #f4f4f4;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    padding: 0.22rem 0;
+    font-size: .7rem;
+    border-bottom: .02rem solid #f4f4f4;
     background-color: #fff;
     display: flex; }
     section#elm-list .nav a {
       text-align: center;
       width: 33%;
-      border-right: 0.02rem solid #f4f4f4; }
+      border-right: .02rem solid #f4f4f4; }
       section#elm-list .nav a .triangle-down {
         display: inline-block;
-        margin: 0.12rem 0.2rem;
+        margin: .13rem .22rem;
         width: 0;
         height: 0;
-        border-left: 0.12rem solid transparent;
-        border-right: 0.12rem solid transparent;
-        border-top: 0.2rem solid #333; }
+        border-left: .13rem solid transparent;
+        border-right: .13rem solid transparent;
+        border-top: .22rem solid #333; }
     section#elm-list .nav .no-border {
       border-right: none; }
   section#elm-list .list li {
-    padding: 0.4rem;
-    border-bottom: 0.02rem solid #f4f4f4; }
+    padding: .65rem .43rem;
+    border-bottom: .02rem solid #e4e4e4; }
     section#elm-list .list li a {
       display: flex;
       color: #000; }
     section#elm-list .list li .img {
-      height: 3.6rem; }
+      height: 2.74rem; }
       section#elm-list .list li .img img {
-        width: 3.6rem;
-        height: 3.6rem; }
+        width: 2.74rem;
+        height: 2.74rem; }
     section#elm-list .list li .content {
       flex: 1;
-      height: 3.6rem;
-      padding-left: 0.4rem; }
-      section#elm-list .list li .content div {
-        height: 1.2rem;
-        line-height: 1.2rem; }
+      height: 2.74rem;
+      padding-left: .43rem; }
       section#elm-list .list li .content .title {
+        height: .91rem;
+        line-height: .91rem;
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        align-items: center; }
         section#elm-list .list li .content .title .i-pinpai {
           color: #6f3f15;
           background-color: #fff100;
-          padding: 0.04rem;
-          font-size: 0.48rem;
-          border-radius: 5px; }
+          padding: .04rem;
+          font-size: .35rem;
+          border-radius: .11rem; }
         section#elm-list .list li .content .title .title-brand {
           font-weight: bold;
-          font-size: 0.56rem; }
+          font-size: .61rem; }
         section#elm-list .list li .content .title .i-tedian {
           color: #999999;
-          font-size: 0.44rem;
-          padding: 0.04rem;
-          border: 1px solid #f4f4f4;
-          border-radius: 5px; }
+          font-size: .35rem;
+          padding: .04rem;
+          border: .025rem solid #e4e4e4;
+          border-radius: .11rem; }
       section#elm-list .list li .content .sales {
+        height: .91rem;
+        line-height: .91rem;
+        margin: .22rem 0 0;
         display: flex;
         justify-content: space-between;
-        font-size: 0.48rem; }
+        font-size: .43rem;
+        color: #666;
+        align-items: center; }
         section#elm-list .list li .content .sales img {
-          width: 1.6rem; }
+          width: 1.74rem; }
         section#elm-list .list li .content .sales .sale-sorce {
           color: #ff6700; }
         section#elm-list .list li .content .sales .i-speed1 {
           color: #fff;
           background-color: #298eeb;
-          font-size: 0.44rem;
-          padding: 0.04rem;
-          border: 1px solid #298eeb;
-          border-radius: 5px; }
+          font-size: .35rem;
+          padding: .04rem;
+          border: .025rem solid #298eeb;
+          border-radius: .11rem; }
         section#elm-list .list li .content .sales .i-speed2 {
           color: #298eeb;
           background-color: #fff;
-          font-size: 0.44rem;
-          padding: 0.04rem;
-          border: 1px solid #298eeb;
-          border-radius: 5px; }
+          font-size: .35rem;
+          padding: .04rem;
+          border: .025rem solid #298eeb;
+          border-radius: .11rem; }
       section#elm-list .list li .content .price {
+        height: .91rem;
+        line-height: .91rem;
         display: flex;
         justify-content: space-between;
-        font-size: 0.48rem; }
+        font-size: .43rem;
+        color: #666;
+        align-items: center; }
         section#elm-list .list li .content .price .i-blue {
           color: #298eeb; }
-
-/*# sourceMappingURL=list.css.map */
