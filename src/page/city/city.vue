@@ -5,10 +5,10 @@
         </head-top>
         <form class="city_form" v-on:submit.prevent>
             <div>
-                <input type="search" name="city" placeholder="输入学校、商务楼、地址" class="city_input input_style" required>
+                <input type="search" name="city" placeholder="输入学校、商务楼、地址" class="city_input input_style" required v-model='inputVaule'>
             </div>
             <div>
-                <input type="submit" name="submit" class="city_submit input_style" value="提交">
+                <input type="submit" name="submit" class="city_submit input_style" @click='postVal' value="提交">
             </div>
         </form>
         <header class="pois_search_history">搜索历史</header>
@@ -30,6 +30,7 @@ import { getCurrentCity } from '../../service/getData'
 export default {
     data(){
         return {
+            inputVaule:'', // 搜索地址
             cityid:'', // 当前城市id
             cityname:'', // 当前城市名字
         }
@@ -42,6 +43,13 @@ export default {
         getCurrentCity({ params: { id: this.cityid } }).then((res) => {
             console.log(res);
         })
+    },
+    methods:{
+        postVal(){
+            if(this.inputVaule){
+                console.log(this.inputVaule);
+            }
+        }
     }
 }
 </script>

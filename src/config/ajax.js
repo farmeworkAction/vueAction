@@ -4,7 +4,7 @@ import axios from './axios'
 /**
  * 
  * @param {*} url 
- * @param {*} data 当参数为多个时格式为{ params: { type: 'guess' } } 单个参数
+ * @param {*} data
  * @param {*} error 
  */
 export function ajaxGet (url, data, error) {
@@ -18,7 +18,12 @@ export function ajaxGet (url, data, error) {
     })
   })
 }
-
+/**
+ * 
+ * @param {*} url 
+ * @param {*} data 
+ * @param {*} error 
+ */
 export function ajaxPost (url, data, error) {
   return new Promise((resolve, reject) => {
     axios.post(url, {
