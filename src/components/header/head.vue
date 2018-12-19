@@ -25,12 +25,12 @@
 
 <script>
 export default {
-    data(){
-        return {
-            userinfo:true
-        }
-    },
-    props: ['headTitle','goBack'],
+  data () {
+    return {
+      userinfo: true
+    }
+  },
+  props: ['headTitle', 'goBack']
 }
 </script>
 
