@@ -40,7 +40,7 @@ export default {
     },
     mounted(){
         this.cityid = this.$route.params.cityid;
-        getCurrentCity({ params: { id: this.cityid } }).then((res) => {
+        getCurrentCity(this.cityid).then((res) => {
             console.log(res);
         })
     },

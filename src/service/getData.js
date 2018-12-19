@@ -15,4 +15,4 @@ export const getCityGroup = () => ajaxGet(config.url + '/v1/cities?type=group')
 
 // 获取当前城市
 
-export const getCurrentCity = () => ajaxGet(config.url + '/v1/cities/')
+export const getCurrentCity = (id) => ajaxGet(config.url + `/v1/cities/${id}`)
