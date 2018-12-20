@@ -1,3 +1,3 @@
-export const config = {
+export const cnf = {
   url: 'https://elm.cangdu.org'
 }

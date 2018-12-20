@@ -1,43 +1,43 @@
 <template>
     <div>
         <head-top signin-up='home'>
-            <span slot='logo' class="head_logo">ele.me</span>
+          <span slot='logo' class="head_logo">ele.me</span>
         </head-top>
         <nav class="city_nav">
-            <div class="city_tip">
-                <span>当前定位城市：</span>
-                <span>定位不准时，请在城市列表中选择</span>
-            </div>
-            <router-link :to="'/city/' + cityId" class="guess_city">
-              <span>{{guessCity}}</span>
-							<svg class="arrow_right">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
-							</svg>
-            </router-link>
+          <div class="city_tip">
+              <span>当前定位城市：</span>
+              <span>定位不准时，请在城市列表中选择</span>
+          </div>
+          <router-link :to="'/city/' + cityId" class="guess_city">
+            <span>{{guessCity}}</span>
+            <svg class="arrow_right">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
+            </svg>
+          </router-link>
         </nav>
         <section id="hot_city_container">
-            <h4 class="city_title">热门城市</h4>
-            <ul class="citylistul clear">
-								<li v-for="item in hotCity" :key="item.id">
-									<router-link :to="'/city/' + item.id">
-										{{item.name}}
-									</router-link>
-								</li>
-            </ul>
+          <h4 class="city_title">热门城市</h4>
+          <ul class="citylistul clear">
+              <li v-for="item in hotCity" :key="item.id">
+                <router-link :to="'/city/' + item.id">
+                  {{item.name}}
+                </router-link>
+              </li>
+          </ul>
         </section>
         <section class="group_city_container">
-            <li v-for="(value, key, index) in sortGroup" :key="key"  class="letter_classify_li">
-								<h4 class="city_title">{{key}}
-										<span v-if="index == 0">（按字母排序）</span>
-								</h4>
-								<ul class="groupcity_name_container citylistul clear">
-										<li v-for="item in value" :key="item.id" class="ellipsis">
-											<router-link :to="'/city/' + item.id">
-												{{item.name}}
-											</router-link>
-										</li>
-								</ul>
-						</li>
+          <li v-for="(value, key, index) in sortGroup" :key="key"  class="letter_classify_li">
+              <h4 class="city_title">{{key}}
+                  <span v-if="index == 0">（按字母排序）</span>
+              </h4>
+              <ul class="groupcity_name_container citylistul clear">
+                  <li v-for="item in value" :key="item.id" class="ellipsis">
+                    <router-link :to="'/city/' + item.id">
+                      {{item.name}}
+                    </router-link>
+                  </li>
+              </ul>
+          </li>
         </section>
     </div>
 </template>
@@ -48,10 +48,10 @@ import { getCityGuess, getHotCity, getCityGroup } from '../../service/getData'
 export default {
   data () {
     return {
-			guessCity: '', // 当前城市
-			cityId:'',
-			hotCity: [],
-			cityGroup: {},
+      guessCity: '', // 当前城市
+      cityId: '',
+      hotCity: [],
+      cityGroup: {}
     }
   },
   components: {
@@ -61,36 +61,33 @@ export default {
 
   },
   mounted: function () {
-		
-		// 获取当前城市
+    // 获取当前城市
     getCityGuess().then(res => {
-			console.log(res.data)
-			this.guessCity = res.data.name
-			this.cityId = res.data.id
-		})
+      this.guessCity = res.name
+      this.cityId = res.id
+    })
 
     // 获取热门城市
     getHotCity().then(res => {
-      this.hotCity = res.data
-		})
-		
-		
-		//获取所有城市
-		getCityGroup().then(res => {
-      this.cityGroup = res.data
-		})
-	},
-	computed:{
-		sortGroup() {
-			let sortobj = {};
-				for (let i = 65; i <= 90; i++) {
-						if (this.cityGroup[String.fromCharCode(i)]) {
-								sortobj[String.fromCharCode(i)] = this.cityGroup[String.fromCharCode(i)];
-						}
-				}
-				return sortobj
-		}
-	}
+      this.hotCity = res
+    })
+
+    // 获取所有城市
+    getCityGroup().then(res => {
+      this.cityGroup = res
+    })
+  },
+  computed: {
+    sortGroup () {
+      let sortobj = {}
+      for (let i = 65; i <= 90; i++) {
+        if (this.cityGroup[String.fromCharCode(i)]) {
+          sortobj[String.fromCharCode(i)] = this.cityGroup[String.fromCharCode(i)]
+        }
+      }
+      return sortobj
+    }
+  }
 }
 </script>
 

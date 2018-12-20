@@ -28,29 +28,29 @@ import headTop from '../../components/header/head.vue'
 import { getCurrentCity } from '../../service/getData'
 
 export default {
-    data(){
-        return {
-            inputVaule:'', // 搜索地址
-            cityid:'', // 当前城市id
-            cityname:'', // 当前城市名字
-        }
-    },
-    components: {
-        headTop
-    },
-    mounted(){
-        this.cityid = this.$route.params.cityid;
-        getCurrentCity(this.cityid).then((res) => {
-            console.log(res);
-        })
-    },
-    methods:{
-        postVal(){
-            if(this.inputVaule){
-                console.log(this.inputVaule);
-            }
-        }
+  data () {
+    return {
+      inputVaule: '', // 搜索地址
+      cityid: '', // 当前城市id
+      cityname: '' // 当前城市名字
     }
+  },
+  components: {
+    headTop
+  },
+  mounted () {
+    this.cityid = this.$route.params.cityid
+    getCurrentCity(this.cityid).then((res) => {
+      console.log(res)
+    })
+  },
+  methods: {
+    postVal () {
+      if (this.inputVaule) {
+        console.log(this.inputVaule)
+      }
+    }
+  }
 }
 </script>
 

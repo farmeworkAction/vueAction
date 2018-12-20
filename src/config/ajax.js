@@ -1,40 +1,81 @@
-/* eslint-disable */
-import axios from './axios'
 
-/**
- * 
- * @param {*} url 
- * @param {*} data
- * @param {*} error 
- */
-export function ajaxGet (url, data, error) {
+import axios from './axios'
+import { cnf } from './config'
+
+const METHOD = {
+  GET: 'GET',
+  POST: 'POST'
+}
+
+const genQuery = (queryData = {}) => {
+  let ret = ''
+  for (var i in queryData) {
+    ret += `&${i}=${encodeURIComponent(queryData[i])}`
+  }
+  return ret.replace(/&/, '?')
+}
+
+const http = (method, url, data, type = 'json') => {
+  if (!url) return null
+  let sendURL = url
+  const send = axios.request
+  const config = {
+    url: sendURL,
+    withCredentials: true,
+    method
+  }
+  if (method === METHOD.GET) {
+    sendURL += genQuery(data)
+    config.url = sendURL
+  } else {
+    let contentType = ''
+    let cfgData = data
+    switch (type) {
+      case 'json':
+        contentType = 'application/json'
+        cfgData = JSON.stringify(data || {})
+        break
+      case 'file':
+        contentType = 'multipart/form-data'
+        cfgData = new FormData()
+        for (var i in data) {
+          cfgData.append(i, data[i])
+        }
+        break
+      case 'formData':
+        contentType = 'application/x-www-form-urlencoded'
+        config.transformRequest = [(requestData) => {
+          let ret = ''
+          let index = 0
+          for (var i in requestData) {
+            ret += `${index === 0 ? '' : '&'}${encodeURIComponent(i)}=${encodeURIComponent(requestData[i])}`
+            index += 1
+          }
+          return ret
+        }]
+        break
+      default:
+        break
+    }
+    config.headers['Content-Type'] = contentType
+    config.data = cfgData
+  }
   return new Promise((resolve, reject) => {
-    axios.get(url,data).then(res => {
-      resolve(res)
-    }, err => {
-      err = error ? error : err
-      console.log(err)
-      reject(err);
+    send(config).then((resp) => {
+      const respData = resp.data
+      resolve(respData)
+    }).catch((err) => {
+      reject(err)
     })
   })
 }
-/**
- * 
- * @param {*} url 
- * @param {*} data 
- * @param {*} error 
- */
-export function ajaxPost (url, data, error) {
-  return new Promise((resolve, reject) => {
-    axios.post(url, {
-      data: data
-    }).then(res => {
-      resolve(res)
-    }, err => {
-      err = error ? error : err
-      console.log(err)
-      reject(err);
-    })
-  })
+
+export default class Ajax {
+  static get (url, data) {
+    return http(METHOD.GET, `${cnf.url}${url}`, data)
+  }
+
+  static post (url, data, type = 'json') {
+    return http(METHOD.POST, `${cnf.url}${url}`, data, type)
+  }
 }
- /* eslint-enable */
