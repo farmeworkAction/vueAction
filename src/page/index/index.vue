@@ -9,11 +9,11 @@
         <ul>
             <li><a href="#">
                 <div class="navimg"><img src="style/images/nav.jpeg" /></div>
-                <span>甜品饮品</span>     
+                <span>甜品饮品</span>
             </a></li>
             <li><a href="#">
                 <div class="navimg"><img src="style/images/nav.jpeg" /></div>
-                <span>甜品饮品</span>     
+                <span>甜品饮品</span>
             </a></li>
             <li><a href="#">
                 <div class="navimg"><img src="style/images/nav.jpeg" /></div>
@@ -21,7 +21,7 @@
             </a></li>            
             <li><a href="#">
                 <div class="navimg"><img src="style/images/nav.jpeg" /></div>
-                <span>甜品饮品</span>     
+                <span>甜品饮品</span>
             </a></li>
             <li><a href="#">
                 <div class="navimg"><img src="style/images/nav.jpeg" /></div>
