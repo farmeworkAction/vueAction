@@ -15,3 +15,7 @@ export const getCityGroup = () => Ajax.get('/v1/cities', { type: 'group' })
 // 获取当前城市
 
 export const getCurrentCity = (id) => Ajax.get(`/v1/cities/${id}`)
+
+// 搜索地址
+
+export const getPosi = (data) => Ajax.get('/v1/pois', data)

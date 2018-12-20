@@ -1,6 +1,6 @@
 <template>
     <div class="city_container">
-        <head-top head-title='cityname' go-back='true'>
+        <head-top :head-title='cityname' go-back='true'>
             <router-link to="/home" slot="changecity" class="change_city">切换城市</router-link>
         </head-top>
         <form class="city_form" v-on:submit.prevent>
@@ -13,9 +13,9 @@
         </form>
         <header class="pois_search_history">搜索历史</header>
         <ul class="getpois_ul">
-            <li>
-                <h4 class="pois_name ellipsis">111</h4>
-                <p class="pois_address ellipsis">222</p>
+            <li v-for="item in addressList" :key="item" @click="chooseAddress">
+                <h4 class="pois_name ellipsis">{{item.name}}</h4>
+                <p class="pois_address ellipsis">{{item.address}}</p>
             </li>
         </ul>
         <footer class="clear_all_history">清空所有</footer>
@@ -24,15 +24,18 @@
 </template>
 
 <script>
+import { setStore, getStore, delStore } from '../../config/util'
 import headTop from '../../components/header/head.vue'
-import { getCurrentCity } from '../../service/getData'
+import { getCurrentCity, getPosi } from '../../service/getData'
 
 export default {
   data () {
     return {
       inputVaule: '', // 搜索地址
       cityid: '', // 当前城市id
-      cityname: '' // 当前城市名字
+      cityname: '', // 当前城市名字
+      addressList: [], // 搜索地址列表
+      addressHistory: [] // 历史搜索记录
     }
   },
   components: {
@@ -41,14 +44,31 @@ export default {
   mounted () {
     this.cityid = this.$route.params.cityid
     getCurrentCity(this.cityid).then((res) => {
-      console.log(res)
+      this.cityname = res.name
     })
+    this.getHistory()
   },
   methods: {
     postVal () {
       if (this.inputVaule) {
-        console.log(this.inputVaule)
+        getPosi({
+          city_id: this.cityid,
+          keyword: this.inputVaule,
+          type: 'search'
+        }).then((res) => {
+          console.log(res)
+          this.addressList = res
+        })
       }
+    },
+    chooseAddress () {
+      const history = getStore('addressHistory')
+      if (history) {
+        
+      }
+    },
+    getHistory () {
+
     }
   }
 }
