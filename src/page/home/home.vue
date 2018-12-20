@@ -63,18 +63,18 @@ export default {
   mounted: function () {
     // 获取当前城市
     getCityGuess().then(res => {
-      this.guessCity = res.data.name
-      this.cityId = res.data.id
+      this.guessCity = res.name
+      this.cityId = res.id
     })
 
     // 获取热门城市
     getHotCity().then(res => {
-      this.hotCity = res.data
+      this.hotCity = res
     })
 
     // 获取所有城市
     getCityGroup().then(res => {
-      this.cityGroup = res.data
+      this.cityGroup = res
     })
   },
   computed: {

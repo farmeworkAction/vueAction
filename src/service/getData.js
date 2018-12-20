@@ -1,18 +1,17 @@
-import { config } from '../config/config'
-import { ajaxGet } from '../config/ajax'
+import Ajax from '../config/ajax'
 
 // 获取首页默认地址
 
-export const getCityGuess = () => ajaxGet(config.url + '/v1/cities', { params: { type: 'guess' } })
+export const getCityGuess = () => Ajax.get('/v1/cities', { type: 'guess' })
 
 // 获取首页热门城市
 
-export const getHotCity = () => ajaxGet(config.url + '/v1/cities?type=hot')
+export const getHotCity = () => Ajax.get('/v1/cities', { type: 'hot' })
 
 // 获取首页所有城市
 
-export const getCityGroup = () => ajaxGet(config.url + '/v1/cities?type=group')
+export const getCityGroup = () => Ajax.get('/v1/cities', { type: 'group' })
 
 // 获取当前城市
 
-export const getCurrentCity = (id) => ajaxGet(config.url + `/v1/cities/${id}`)
+export const getCurrentCity = (id) => Ajax.get(`/v1/cities/${id}`)

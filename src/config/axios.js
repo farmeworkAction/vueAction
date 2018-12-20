@@ -1,8 +1,7 @@
 import axios from 'axios'
+
 let CancelToken = axios.CancelToken // 取消请求
-let cancelFlag = true
 axios.defaults.withCredentials = true
-// axios.defaults.baseURL = "https://easy-mock.com/mock/5b7bc3d450a6182006a1986e"
 axios.interceptors.request.use(config => {
   // 设置默认请求头
   config.headers['X-Requested-With'] = 'XMLHttpRequest'
