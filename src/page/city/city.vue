@@ -64,7 +64,7 @@ export default {
     chooseAddress () {
       const history = getStore('addressHistory')
       if (history) {
-        
+
       }
     },
     getHistory () {
