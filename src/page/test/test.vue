@@ -400,8 +400,6 @@ html,body{
     height: 100%;
 }
 
-#wrap{}
-
 .fixd-top1{
     position: fixed;
     top: 0;
