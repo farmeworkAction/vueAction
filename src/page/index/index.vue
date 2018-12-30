@@ -8,35 +8,35 @@
   <nav>
     <ul>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
           <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
       <li><a href="#">
-        <div class="navimg"><img src="style/images/nav.jpeg" /></div>
+        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
         <span>甜品饮品</span>
       </a></li>
     </ul>
@@ -52,7 +52,7 @@
     <ul class="list">
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -67,7 +67,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -87,7 +87,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -102,7 +102,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -122,7 +122,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -137,7 +137,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -157,7 +157,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -172,7 +172,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -192,7 +192,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -207,7 +207,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -227,7 +227,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -242,7 +242,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -262,7 +262,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -277,7 +277,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -297,7 +297,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -312,7 +312,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -332,7 +332,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -347,7 +347,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -367,7 +367,7 @@
       </a></li>
       <li><a href="#">
         <div class="img">
-          <img src="style/images/listpic.png" />
+          <img src="../../images/listpic.png" />
         </div>
         <div class="content">
           <div class="title">
@@ -382,7 +382,7 @@
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="style/images/star.jpg"/> 4.6</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
               <span>月售2003单</span>
             </div>
             <div>
@@ -404,19 +404,19 @@
   </section>
   <footer>
     <a>
-      <img src="style/images/nav-footer.jpeg">
+      <img src="../../images/nav-footer.jpeg">
       <span>外卖</span>
     </a>
     <a>
-      <img src="style/images/nav-footer.jpeg">
+      <img src="../../images/nav-footer.jpeg">
       <span>外卖</span>
     </a>
     <a>
-      <img src="style/images/nav-footer.jpeg">
+      <img src="../../images/nav-footer.jpeg">
       <span>外卖</span>
     </a>
     <a>
-      <img src="style/images/nav-footer.jpeg">
+      <img src="../../images/nav-footer.jpeg">
       <span>外卖</span>
     </a>
   </footer>
@@ -461,7 +461,7 @@ header{
     .ico-search{
       width: .91rem;
       height: .91rem;
-      background-image: url('images/search.jpg');
+      background-image: url('../../images/search.jpg');
       background-size: .91rem .91rem;
       display: inline-block;
     }
@@ -538,7 +538,7 @@ section#elm-seller{
     color: #999999;
     margin: .43rem 0 .22rem .54rem;
     padding-left: .87rem;
-    background: url('images/shop.jpg') 0 .09rem no-repeat;
+    background: url('../../images/shop.jpg') 0 .09rem no-repeat;
     background-size: .61rem .61rem;
   }
   .list{
