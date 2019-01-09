@@ -1,0 +1,14 @@
+language: node_js
+node_js: stable
+branches:
+  only:
+  - master
+addons:
+  ssh_known_hosts:
+  - 47.104.12.129
+install:
+- npm install
+script:
+- npm run build
+after_success:
+- rsync -az --delete ./dist/* travis@47.104.12.129:/root/work/dist/
