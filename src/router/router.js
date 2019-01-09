@@ -1,4 +1,4 @@
-import App from '../App.vue'
+import App from '../app'
 
 const home = r => require.ensure([], () => r(require('../page/home/home.vue')), 'home')
 const index = r => require.ensure([], () => r(require('../page/index/index.vue')), 'index')
