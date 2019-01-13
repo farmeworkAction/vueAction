@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5; }
+
+header {
+  position: relative;
+  overflow: hidden; }
+  header .bgimg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: blur(10px); }
+  header .top {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background-color: rgba(119, 103, 137, 0.43);
+    display: flex;
+    padding: .4rem 0 0 .4rem; }
+    header .top .img img {
+      width: 2.96rem;
+      height: 2.96rem;
+      border-radius: .15rem;
+      display: block; }
+    header .top .info {
+      color: #fff;
+      padding-left: .35rem; }
+      header .top .info h1 {
+        font-size: .78rem; }
+      header .top .info .info1, header .top .info .info2 {
+        font-size: .52rem;
+        height: .98rem;
+        line-height: .98rem; }
+    header .top svg {
+      position: absolute;
+      top: 50%;
+      right: .6rem; }
+  header .bottom {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(119, 103, 137, 0.43);
+    color: #fff;
+    font-size: .52rem;
+    height: .98rem;
+    line-height: .98rem;
+    display: flex;
+    justify-content: space-between;
+    padding: .33rem .4rem; }
+    header .bottom .b-l span {
+      padding: 0 .1rem;
+      border-radius: .1rem;
+      background-color: #f07373;
+      color: #fff; }
+    header .bottom .b-r {
+      display: flex; }
+      header .bottom .b-r span {
+        display: block; }
+  header .return {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: .2rem;
+    padding-left: .2rem; }
+
+nav {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  height: 2.17rem;
+  line-height: 2.17rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebebeb; }
+  nav div {
+    width: 50%;
+    text-align: center;
+    font-size: .65rem; }
+    nav div span {
+      padding: .2rem .1rem; }
+    nav div .hover {
+      color: #3190e8;
+      border-bottom: .12rem solid #3190e8; }
+
+section#elm-seller {
+  font-size: .6rem;
+  display: flex;
+  color: #333;
+  margin-bottom: 3em; }
+  section#elm-seller .seller-left {
+    width: 3.8rem;
+    text-align: center; }
+    section#elm-seller .seller-left li {
+      padding: .98rem .3rem;
+      border-bottom: .025rem solid #ededed;
+      border-left: .15rem solid #f8f8f8; }
+      section#elm-seller .seller-left li img {
+        width: .6rem;
+        height: .7rem;
+        margin-right: .22rem; }
+    section#elm-seller .seller-left .hover {
+      background-color: #fff;
+      border-left: .15rem solid #3190e8;
+      font-weight: bold; }
+  section#elm-seller .seller-right {
+    flex: 3;
+    padding-right: .09rem; }
+    section#elm-seller .seller-right dl dt {
+      height: 1.96rem;
+      line-height: 1.96rem;
+      padding: 0 .4rem;
+      display: flex;
+      justify-content: space-between; }
+      section#elm-seller .seller-right dl dt .title {
+        font-size: .7rem;
+        font-weight: bold; }
+      section#elm-seller .seller-right dl dt .info {
+        font-size: .5rem;
+        color: #999; }
+      section#elm-seller .seller-right dl dt .more {
+        width: .5rem;
+        height: 1rem;
+        margin: auto 0;
+        background: url("images/more.png") left 0.3rem no-repeat;
+        background-size: 100% .5rem; }
+    section#elm-seller .seller-right dl dd {
+      background-color: #fff;
+      padding: .6rem .4rem;
+      border-bottom: 1px solid #f8f8f8;
+      display: flex;
+      position: relative;
+      overflow: hidden; }
+      section#elm-seller .seller-right dl dd .img {
+        padding-right: .4rem; }
+        section#elm-seller .seller-right dl dd .img img {
+          width: 2rem;
+          height: 2rem; }
+      section#elm-seller .seller-right dl dd .con {
+        width: 100%; }
+        section#elm-seller .seller-right dl dd .con .tit {
+          font-weight: bold;
+          font-size: .7rem;
+          margin-bottom: .2rem; }
+        section#elm-seller .seller-right dl dd .con .inf {
+          font-size: .5rem;
+          height: .8rem;
+          line-height: .8rem;
+          color: #999; }
+        section#elm-seller .seller-right dl dd .con .dat {
+          font-size: .5rem;
+          height: .8rem;
+          line-height: .8rem; }
+        section#elm-seller .seller-right dl dd .con .sal {
+          font-size: .5rem;
+          height: .8rem;
+          line-height: .8rem;
+          color: #f00; }
+        section#elm-seller .seller-right dl dd .con .pri {
+          margin-top: .2rem;
+          display: flex;
+          justify-content: space-between; }
+          section#elm-seller .seller-right dl dd .con .pri .num {
+            font-weight: bold;
+            font-size: .7rem;
+            color: #f00; }
+          section#elm-seller .seller-right dl dd .con .pri .cho {
+            display: block;
+            font-size: .55rem;
+            color: #fff;
+            padding: .1rem .2rem;
+            background-color: #3190e8;
+            border-radius: .2rem;
+            border: 1px solid #3190e8; }
+      section#elm-seller .seller-right dl dd .new {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #4cd964;
+        width: 2rem;
+        height: 2rem;
+        transform: rotate(-45deg) translate(-0.1rem, -1.5rem);
+        display: flex;
+        align-items: flex-end; }
+        section#elm-seller .seller-right dl dd .new p {
+          font-size: .4rem;
+          line-height: .4rem;
+          color: #fff;
+          text-align: center;
+          transform: scale(0.8) translate(0.1rem, -0.1rem);
+          flex: 1; }
+
+footer {
+  position: fixed;
+  z-index: 100;
+  background-color: #3d3d3f;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 2rem;
+  font-size: .65rem;
+  color: #fff;
+  font-weight: 700; }
+  footer .shopsvg {
+    background-color: #3d3d3f;
+    position: absolute;
+    padding: .4rem;
+    border: .18rem solid #444;
+    border-radius: 50%;
+    left: .5rem;
+    top: -.7rem; }
+  footer .cost {
+    position: absolute;
+    top: 0;
+    left: 3.4rem; }
+    footer .cost .cost-num {
+      font-size: .65rem;
+      margin: .1rem 0; }
+    footer .cost .cost-send {
+      font-size: .39rem; }
+  footer .cost-diff {
+    position: absolute;
+    right: 0;
+    background-color: #535356;
+    width: 5.09rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center; }
