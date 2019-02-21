@@ -19,3 +19,8 @@ export const getCurrentCity = (id) => Ajax.get(`/v1/cities/${id}`)
 // 搜索地址
 
 export const getPosi = (data) => Ajax.get('/v1/pois', data)
+
+// ZH
+// 获取餐馆经纬度
+
+export const getEatItude = (data) => Ajax.get('/shopping/restaurants', data)

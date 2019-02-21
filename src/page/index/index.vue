@@ -49,7 +49,43 @@
     <div class="seller-title">
       附近商家
     </div>
-    <ul class="list">
+    <ul class="list" v-for="item in eatLatitude" :key="item.id">
+      <li><a href="#">
+        <div class="img">
+          <img src="../../images/listpic.png" />
+        </div>
+        <div class="content">
+          <div class="title">
+            <div>
+              <span class="i-pinpai">品牌</span>
+              <span class="title-brand">{{item.name}}</span>
+            </div>
+            <div>
+              <span class="i-tedian">保</span>
+              <span class="i-tedian">准</span>
+            </div>
+          </div>
+          <div class="sales">
+            <div>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
+              <span>月售2003单</span>
+            </div>
+            <div>
+              <span class="i-speed1">蜂鸟专送</span>
+              <span class="i-speed2">准时达</span>
+            </div>
+          </div>
+          <div class="price">
+            <div>
+                ¥20元起送 配送费约¥5元
+            </div>
+            <div>
+                843m / <span class="i-blue">47分钟</span>
+            </div>
+          </div>
+        </div>
+      </a></li>
+      <!--
       <li><a href="#">
         <div class="img">
           <img src="../../images/listpic.png" />
@@ -85,321 +121,7 @@
           </div>
         </div>
       </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
+      -->
     </ul>
   </section>
   <footer>
@@ -424,7 +146,48 @@
 </template>
 
 <script>
+import headTop from '../../components/header/head.vue'
+import { getEatItude } from '../../service/getData'
 export default {
+  data () {
+    return {
+      eatLatitude: '',
+      eatLongitude: '',
+      eatName: '', // 餐馆名
+      eatId: ''
+    }
+  },
+  components: {
+    headTop
+  },
+  methods: {
+  },
+  mounted: function () {
+    //
+    getEatItude({
+      latitude: 30.497581,
+      longitude: 114.368862
+    }).then(res => {
+      this.eatLatitude = res
+      console.log(res)
+    })
+
+    // 获取所有城市
+    // getCityGroup().then(res => {
+    //   this.cityGroup = res
+    // })
+  },
+  computed: {
+    sortGroup () {
+      let sortobj = {}
+      for (let i = 65; i <= 90; i++) {
+        if (this.cityGroup[String.fromCharCode(i)]) {
+          sortobj[String.fromCharCode(i)] = this.cityGroup[String.fromCharCode(i)]
+        }
+      }
+      return sortobj
+    }
+  }
 }
 </script>
 
@@ -440,7 +203,6 @@ html,body{
   height: 100%;
   background-color: #f5f5f5;
 }
-
 header{
   position: fixed;
   top: 0;
