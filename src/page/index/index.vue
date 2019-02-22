@@ -52,7 +52,7 @@
     <ul class="list" v-for="item in eatLatitude" :key="item.id">
       <li><a href="#">
         <div class="img">
-          <img src="../../images/listpic.png" />
+          <img v-bind:src="'//elm.cangdu.org/img/'+item.image_path" />
         </div>
         <div class="content">
           <div class="title">
@@ -61,14 +61,13 @@
               <span class="title-brand">{{item.name}}</span>
             </div>
             <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
+              <span class="i-tedian" v-for="item2 in item.supports" :key="item2.id">{{item2.icon_name}}</span>
             </div>
           </div>
           <div class="sales">
             <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
+              <span class="sale-sorce"><img src="../../images/star.jpg"/> {{item.rating}}</span>
+              <span>月售{{item.rating_count}}单</span>
             </div>
             <div>
               <span class="i-speed1">蜂鸟专送</span>
@@ -76,52 +75,11 @@
             </div>
           </div>
           <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
+            <div>¥20元起送 配送费约¥5元</div>
+            <div>{{item.distance}} / <span class="i-blue">{{item.order_lead_time}}</span></div>
           </div>
         </div>
       </a></li>
-      <!--
-      <li><a href="#">
-        <div class="img">
-          <img src="../../images/listpic.png" />
-        </div>
-        <div class="content">
-          <div class="title">
-            <div>
-              <span class="i-pinpai">品牌</span>
-              <span class="title-brand">秀玉红茶坊（钟家村店）</span>
-            </div>
-            <div>
-              <span class="i-tedian">保</span>
-              <span class="i-tedian">准</span>
-            </div>
-          </div>
-          <div class="sales">
-            <div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> 4.6</span>
-              <span>月售2003单</span>
-            </div>
-            <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
-            </div>
-          </div>
-          <div class="price">
-            <div>
-                ¥20元起送 配送费约¥5元
-            </div>
-            <div>
-                843m / <span class="i-blue">47分钟</span>
-            </div>
-          </div>
-        </div>
-      </a></li>
-      -->
     </ul>
   </section>
   <footer>
@@ -152,9 +110,7 @@ export default {
   data () {
     return {
       eatLatitude: '',
-      eatLongitude: '',
-      eatName: '', // 餐馆名
-      eatId: ''
+      eatLongitude: ''
     }
   },
   components: {
@@ -171,11 +127,6 @@ export default {
       this.eatLatitude = res
       console.log(res)
     })
-
-    // 获取所有城市
-    // getCityGroup().then(res => {
-    //   this.cityGroup = res
-    // })
   },
   computed: {
     sortGroup () {
@@ -217,6 +168,7 @@ header{
   h1{
     font-size: .74rem;
     font-weight: normal;
+    color:#fff;
   }
   .header-search{
     padding-left: .54rem;
@@ -230,6 +182,7 @@ header{
   }
   .header-login{
     font-size: .61rem;
+    color:#fff;
     padding-right: .54rem;
     a{
       color:#fff;
@@ -343,6 +296,7 @@ section#elm-seller{
             color: #999999;
             font-size: .35rem;
             padding: .04rem;
+            margin: 0 .04rem;
             border: .025rem solid #e4e4e4;
             border-radius: .11rem;
           }
