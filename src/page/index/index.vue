@@ -57,7 +57,7 @@
         <div class="content">
           <div class="title">
             <div>
-              <span class="i-pinpai">品牌</span>
+              <span class="i-pinpai" v-if="is_premium==ture">品牌</span>
               <span class="title-brand">{{item.name}}</span>
             </div>
             <div>
@@ -70,12 +70,12 @@
               <span>月售{{item.rating_count}}单</span>
             </div>
             <div>
-              <span class="i-speed1">蜂鸟专送</span>
-              <span class="i-speed2">准时达</span>
+              <span class="i-speed1" v-if="item.delivery_mode.text=='蜂鸟专送'">蜂鸟专送</span>
+              <span class="i-speed2" v-for="item2 in item.supports" :key="item2.id" v-if="item2.name=='准时达'">准时达</span>
             </div>
           </div>
           <div class="price">
-            <div>¥20元起送 配送费约¥5元</div>
+            <div>¥{{item.float_minimum_order_amount}}起送 {{item.piecewise_agent_fee.tips}}</div>
             <div>{{item.distance}} / <span class="i-blue">{{item.order_lead_time}}</span></div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default {
       longitude: 114.368862
     }).then(res => {
       this.eatLatitude = res
-      console.log(res)
+      // console.log(res)
     })
   },
   computed: {
