@@ -7,37 +7,9 @@
   </header>
   <nav>
     <ul>
-      <li><a href="#">
+      <li v-for="item in eatLatitude.slice(0,8)" :key="item.id"><a href="#">
         <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-          <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
-      </a></li>
-      <li><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
-        <span>甜品饮品</span>
+        <span>{{item.title}}</span>
       </a></li>
     </ul>
     <div class="point">
@@ -119,7 +91,7 @@
 
 <script>
 import headTop from '../../components/header/head.vue'
-import { getEatItude } from '../../service/getData'
+import { getEatItude, getEatClass } from '../../service/getData'
 export default {
   data () {
     return {
@@ -133,13 +105,20 @@ export default {
   methods: {
   },
   mounted: function () {
-    //
+    // 获取商铺列表
     getEatItude({
       latitude: 30.497581,
       longitude: 114.368862
     }).then(res => {
       this.eatLatitude = res
+      this.eatLongitude = res
       // console.log(res)
+    })
+    // 食品分类列表
+    getEatClass().then(res => {
+      this.eatLatitude = res
+      this.eatLongitude = res
+      console.log(res)
     })
   },
   computed: {
