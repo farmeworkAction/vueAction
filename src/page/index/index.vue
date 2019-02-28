@@ -18,9 +18,7 @@
     </div>
   </nav>
   <section id="elm-seller">
-    <div class="seller-title">
-      附近商家
-    </div>
+    <div class="seller-title">附近商家</div>
     <ul class="list" v-for="item in eatLatitude" :key="item.id">
       <li><a href="#">
         <div class="img">
