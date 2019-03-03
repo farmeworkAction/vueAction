@@ -1,14 +1,12 @@
 <template>
 <div id="wrap">
-  <header>
-    <div class="header-search"><a href="#" class="ico-search"></a></div>
-    <h1>黄浦区上海人民广场</h1>
-    <div class="header-login"><a href="#">登陆</a> | <a href="#">注册</a></div>
-  </header>
+  <head-top signin-up='home'>
+    <span slot='logo' class="head_logo">ele.me</span>
+  </head-top>
   <nav>
     <ul>
-      <li v-for="item in eatLatitude.slice(0,8)" :key="item.id"><a href="#">
-        <div class="navimg"><img src="../../images/nav.jpeg" /></div>
+      <li v-for="item in eatClass.slice(0,8)" :key="item.id"><a href="#">
+        <div class="navimg"><img v-bind:src="'//fuss10.elemecdn.com/'+item.image_url" /></div>
         <span>{{item.title}}</span>
       </a></li>
     </ul>
@@ -35,8 +33,9 @@
             </div>
           </div>
           <div class="sales">
-            <div>
-              <div class="rating_container">
+            <div class="sale-svg">
+              <div class="sale-sorce">
+                <div class="rating_container">
                   <section class="star_container">
                       <svg class="grey_fill" v-for="num in 5" :key="num">
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
@@ -49,9 +48,9 @@
                           </svg>
                       </section>
                   </div>
+                </div>
               </div>
-              <span class="sale-sorce"><img src="../../images/star.jpg"/> {{item.rating}}</span>
-              <span>月售{{item.rating_count}}单</span>
+              <span> {{item.rating}} 月售{{item.rating_count}}单</span>
             </div>
             <div>
               <span class="i-speed1" v-if="item.delivery_mode.text=='蜂鸟专送'">蜂鸟专送</span>
@@ -94,7 +93,8 @@ export default {
   data () {
     return {
       eatLatitude: '',
-      eatLongitude: ''
+      eatLongitude: '',
+      eatClass: ''
     }
   },
   components: {
@@ -114,8 +114,7 @@ export default {
     })
     // 食品分类列表
     getEatClass().then(res => {
-      this.eatLatitude = res
-      this.eatLongitude = res
+      this.eatClass = res
       console.log(res)
     })
   },
@@ -146,40 +145,12 @@ html,body{
   height: 100%;
   background-color: #f5f5f5;
 }
-header{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  height: 1.96rem;
-  line-height: 1.96rem;
-  background: #4d8ee1;
-  color: #fff;
-  display: flex;
-  justify-content:space-between;
-  h1{
-    font-size: .74rem;
-    font-weight: normal;
-    color:#fff;
-  }
-  .header-search{
-    padding-left: .54rem;
-    .ico-search{
-      width: .91rem;
-      height: .91rem;
-      background-image: url('../../images/search.jpg');
-      background-size: .91rem .91rem;
-      display: inline-block;
-    }
-  }
-  .header-login{
-    font-size: .61rem;
-    color:#fff;
-    padding-right: .54rem;
-    a{
-      color:#fff;
-    }
-  }
+.head_logo{
+  left: 0.4rem;
+  font-weight: 400;
+  @include sc(0.7rem, #fff);
+  @include wh(2.3rem, 0.7rem);
+  @include ct;
 }
 nav{
   margin-top: 1.96rem;
@@ -302,8 +273,9 @@ section#elm-seller{
           font-size: .43rem;
           color: #666;
           align-items: center;
-          img{
-            width: 1.74rem;
+          .sale-svg{
+          display: flex;
+          justify-content:space-between;
           }
           .sale-sorce{
             color: #ff6700;
