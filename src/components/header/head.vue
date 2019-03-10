@@ -74,4 +74,12 @@ export default {
             font-weight: bold;
         }
     }
+    // 首页
+    .head_logo{
+        left: 0.4rem;
+        font-weight: 400;
+        @include sc(0.7rem, #fff);
+        @include wh(2.3rem, 0.7rem);
+        @include ct;
+        }
 </style>

@@ -65,29 +65,14 @@
       </a></li>
     </ul>
   </section>
-  <footer>
-    <a>
-      <img src="../../images/nav-footer.jpeg">
-      <span>外卖</span>
-    </a>
-    <a>
-      <img src="../../images/nav-footer.jpeg">
-      <span>外卖</span>
-    </a>
-    <a>
-      <img src="../../images/nav-footer.jpeg">
-      <span>外卖</span>
-    </a>
-    <a>
-      <img src="../../images/nav-footer.jpeg">
-      <span>外卖</span>
-    </a>
-  </footer>
+  <foot-btn></foot-btn>  
 </div>
 </template>
 
 <script>
 import headTop from '../../components/header/head.vue'
+import footBtn from '../../components/footer/foot.vue'
+import starScore from '../../components/common/star.vue'
 import { getEatItude, getEatClass } from '../../service/getData'
 export default {
   data () {
@@ -98,7 +83,9 @@ export default {
     }
   },
   components: {
-    headTop
+    headTop,
+    footBtn,
+    starScore
   },
   methods: {
   },
@@ -115,7 +102,7 @@ export default {
     // 食品分类列表
     getEatClass().then(res => {
       this.eatClass = res
-      console.log(res)
+      //console.log(res)
     })
   },
   computed: {
@@ -144,13 +131,6 @@ html,body{
   width: 100%;
   height: 100%;
   background-color: #f5f5f5;
-}
-.head_logo{
-  left: 0.4rem;
-  font-weight: 400;
-  @include sc(0.7rem, #fff);
-  @include wh(2.3rem, 0.7rem);
-  @include ct;
 }
 nav{
   margin-top: 1.96rem;
@@ -310,30 +290,6 @@ section#elm-seller{
           }
         }
       }
-    }
-  }
-}
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
-  height: 1.96rem;
-  background-color: #fff;
-  font-size: .43rem;
-  display: flex;
-  a{
-    display: block;
-    width: 25%;
-    text-align: center;
-    margin-top: .22rem;
-    img{
-      width: .78rem;
-      height: .78rem;
-    }
-    span{
-      display: block;
-      color: #666666;
     }
   }
 }
