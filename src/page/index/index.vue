@@ -34,22 +34,7 @@
           </div>
           <div class="sales">
             <div class="sale-svg">
-              <div class="sale-sorce">
-                <div class="rating_container">
-                  <section class="star_container">
-                      <svg class="grey_fill" v-for="num in 5" :key="num">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
-                      </svg>
-                  </section>
-                  <div :style="'width:' + item.rating*2/5 + 'rem'" class="star_overflow">
-                      <section class="star_container" >
-                          <svg  class="orange_fill" v-for="num in 5" :key="num">
-                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
-                          </svg>
-                      </section>
-                  </div>
-                </div>
-              </div>
+                <rating-star></rating-star>
               <span> {{item.rating}} 月售{{item.rating_count}}单</span>
             </div>
             <div>
@@ -72,7 +57,7 @@
 <script>
 import headTop from '../../components/header/head.vue'
 import footBtn from '../../components/footer/foot.vue'
-import starScore from '../../components/common/star.vue'
+import ratingStar from '../../components/common/star.vue'
 import { getEatItude, getEatClass } from '../../service/getData'
 export default {
   data () {
@@ -85,7 +70,7 @@ export default {
   components: {
     headTop,
     footBtn,
-    starScore
+    ratingStar
   },
   methods: {
   },
@@ -292,29 +277,5 @@ section#elm-seller{
       }
     }
   }
-}
-.rating_container{
-    position: relative;
-    top: .2rem;
-    @include wh(2rem, .4rem);
-    .star_overflow{
-        overflow: hidden;
-        position: relative;
-        height: 100%;
-    }
-    .star_container{
-        position: absolute;
-        display: flex;
-        width: 2rem;
-        height: 0.4rem;
-        top: -0.02rem;
-        left: -0.02rem;
-        .grey_fill{
-            fill: #d1d1d1;
-        }
-        .orange_fill{
-            fill: #ff9a0d;
-        }
-    }
 }
 </style>
