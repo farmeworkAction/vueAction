@@ -50,7 +50,7 @@
       </a></li>
     </ul>
   </section>
-  <foot-btn></foot-btn>  
+  <foot-btn></foot-btn>
 </div>
 </template>
 
@@ -87,7 +87,7 @@ export default {
     // 食品分类列表
     getEatClass().then(res => {
       this.eatClass = res
-      //console.log(res)
+      // console.log(res)
     })
   },
   computed: {

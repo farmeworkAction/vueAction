@@ -4,6 +4,7 @@ const home = r => require.ensure([], () => r(require('../page/home/home.vue')), 
 const index = r => require.ensure([], () => r(require('../page/index/index.vue')), 'index')
 const city = r => require.ensure([], () => r(require('../page/city/city.vue')), 'city')
 const list = r => require.ensure([], () => r(require('../page/list/list.vue')), 'list')
+const article = r => require.ensure([], () => r(require('../page/article/article.vue')), 'article')
 const test = r => require.ensure([], () => r(require('../page/test/test.vue')), 'test')
 
 export default [{
@@ -34,6 +35,11 @@ export default [{
     {
       path: '/list',
       component: list
+    },
+    // 内容页面（ZH）
+    {
+      path: '/article',
+      component: article
     },
     // test页面
     {
