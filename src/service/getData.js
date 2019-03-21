@@ -28,3 +28,7 @@ export const getEatItude = (data) => Ajax.get('/shopping/restaurants', data)
 // 食品分类列表
 
 export const getEatClass = (data) => Ajax.get('/v2/index_entry', data)
+
+// 添加食品
+
+export const getFood = (data) => Ajax.get('/shopping/addfood', data)

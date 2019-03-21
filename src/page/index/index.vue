@@ -34,7 +34,7 @@
           </div>
           <div class="sales">
             <div class="sale-svg">
-                <rating-star></rating-star>
+              <rating-star></rating-star>
               <span> {{item.rating}} 月售{{item.rating_count}}单</span>
             </div>
             <div>
@@ -105,18 +105,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../style/mixin';
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-html,body{
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-}
 nav{
   margin-top: 1.96rem;
   height: 8.7rem;
@@ -239,8 +227,8 @@ section#elm-seller{
           color: #666;
           align-items: center;
           .sale-svg{
-          display: flex;
-          justify-content:space-between;
+            display: flex;
+            justify-content:space-between;
           }
           .sale-sorce{
             color: #ff6700;

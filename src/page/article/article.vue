@@ -179,8 +179,37 @@
 </template>
 
 <script>
+import headTop from '../../components/header/head.vue'
+import footBtn from '../../components/footer/foot.vue'
+import ratingStar from '../../components/common/star.vue'
+import { getEatItude } from '../../service/getData'
 export default {
-
+  data () {
+    return {
+      eatLatitude: '',
+      eatLongitude: ''
+    }
+  },
+  components: {
+    headTop,
+    footBtn,
+    ratingStar
+  },
+  methods: {
+  },
+  mounted: function () {
+    // 获取商铺列表
+    getEatItude({
+      latitude: 30.497581,
+      longitude: 114.368862
+    }).then(res => {
+      this.eatLatitude = res
+      this.eatLongitude = res
+      // console.log(res)
+    })
+  },
+  computed: {
+  }
 }
 </script>
 
