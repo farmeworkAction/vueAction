@@ -182,12 +182,11 @@
 import headTop from '../../components/header/head.vue'
 import footBtn from '../../components/footer/foot.vue'
 import ratingStar from '../../components/common/star.vue'
-import { getEatItude } from '../../service/getData'
+import { getFoodClass } from '../../service/getData'
 export default {
   data () {
     return {
-      eatLatitude: '',
-      eatLongitude: ''
+      restaurant_id: ''
     }
   },
   components: {
@@ -199,13 +198,10 @@ export default {
   },
   mounted: function () {
     // 获取商铺列表
-    getEatItude({
-      latitude: 30.497581,
-      longitude: 114.368862
-    }).then(res => {
-      this.eatLatitude = res
-      this.eatLongitude = res
-      // console.log(res)
+    this.restaurant_id = this.restaurantId
+    getFoodClass(this.restaurant_id).then(res => {
+      this.restaurant_id = res
+      console.log(res)
     })
   },
   computed: {
