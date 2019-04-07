@@ -31,133 +31,33 @@
     </nav>
     <section id="elm-seller">
         <ul class="seller-left">
-            <li class="hover"><img src="../../images/hot.jpeg"/>热销榜</li>
-            <li><img src="../../images/sale.jpeg"/>优惠</li>
-            <li>主食</li>
-            <li>素菜</li>
-            <li>荤菜</li>
+            <li v-for="item in shopCon.slice(0,5)" :key="item.id">{{item.name}}</li>
         </ul>
         <div class="seller-right">
-            <dl>
+            <dl v-for="item in shopCon.slice(0,5)" :key="item.id">
                 <dt>
                     <div>
-                        <span class="title">热销榜</span>
-                        <span class="info">大家喜欢吃，才叫真的好吃。</span>
+                        <span class="title">{{item.name}}</span>
+                        <span class="info">{{item.description}}</span>
                     </div>
                     <div class="more"></div>
                 </dt>
-                <dd>
+                <dd v-for="item2 in item.foods.slice(0,2)" :key="item2.id">
                     <div class="img">
-                        <img src="../../images/food.png" />
+                        <img v-bind:src="'//elm.cangdu.org/img/'+item2.image_path" />
                     </div>
                     <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
+                        <div class="tit">{{item2.name}}</div>
+                        <div class="inf">{{item2.description}}</div>
+                        <div class="dat">{{item2.tips}}</div>
+                        <div class="sal">{{item2.rating}}分</div>
+                        <div class="pri" v-for="item3 in item2.specfoods.slice(0,1)" :key="item3.id">
+                            <span class="num">¥{{item3.price}}</span>
                             <span class="cho">选规格</span>
                         </div>
                     </div>
-                    <div class="new">
+                    <div class="new" v-for="item4 in item2.attributes" :key="item4.id" v-if="item4.icon_name=='新'">
                         <p>新品</p>
-                    </div>
-                </dd>
-                <dd>
-                    <div class="img">
-                        <img src="../../images/food.png" />
-                    </div>
-                    <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
-                            <span class="cho">选规格</span>
-                        </div>
-                    </div>
-                    <div class="new">
-                        <p>新品</p>
-                    </div>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <div>
-                        <span class="title">优惠</span>
-                        <span class="info">大家喜欢吃，才叫真的好吃。</span>
-                    </div>
-                    <div class="more"></div>
-                </dt>
-                <dd>
-                    <div class="img">
-                        <img src="../../images/food.png" />
-                    </div>
-                    <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
-                            <span class="cho">选规格</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd>
-                    <div class="img">
-                        <img src="../../images/food.png" />
-                    </div>
-                    <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
-                            <span class="cho">选规格</span>
-                        </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <div>
-                        <span class="title">主食</span>
-                        <span class="info">大家喜欢吃，才叫真的好吃。</span>
-                    </div>
-                    <div class="more"></div>
-                </dt>
-                <dd>
-                    <div class="img">
-                        <img src="../../images/food.png" />
-                    </div>
-                    <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
-                            <span class="cho">选规格</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd>
-                    <div class="img">
-                        <img src="../../images/food.png" />
-                    </div>
-                    <div class="con">
-                        <div class="tit">菲力牛扒</div>
-                        <div class="inf">很好吃的金典牛扒</div>
-                        <div class="dat">月售404份，好评率14%</div>
-                        <div class="sal">3.8折起</div>
-                        <div class="pri">
-                            <span class="num">¥50</span>
-                            <span class="cho">选规格</span>
-                        </div>
                     </div>
                 </dd>
             </dl>
@@ -182,10 +82,11 @@
 import headTop from '../../components/header/head.vue'
 import footBtn from '../../components/footer/foot.vue'
 import ratingStar from '../../components/common/star.vue'
-import { getFoodClass } from '../../service/getData'
+import { getShop, getFood } from '../../service/getData'
 export default {
   data () {
     return {
+      shopCon: [],
       restaurant_id: ''
     }
   },
@@ -197,9 +98,15 @@ export default {
   methods: {
   },
   mounted: function () {
-    // 获取商铺列表
-    this.restaurant_id = this.restaurantId
-    getFoodClass(this.restaurant_id).then(res => {
+    // 餐馆详情
+    getShop(1).then(res => {
+      this.shopCon = res.category_list
+      console.log(res)
+    })
+    // 食品列表
+    getFood({
+      restaurant_id: 1
+    }).then(res => {
       this.restaurant_id = res
       console.log(res)
     })
